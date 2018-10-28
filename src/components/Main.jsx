@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 
-import Intro from "./Intro";
 import Loader from "./Loader";
 import Cleaner from "./Cleaner";
 import Spliter from "./Spliter";
@@ -12,14 +11,6 @@ import Relevance from "./Relevance";
 import { Tab } from "semantic-ui-react";
 
 const panes = [
-  {
-    menuItem: "Введение",
-    render: () => (
-      <Tab.Pane>
-        <Intro />
-      </Tab.Pane>
-    )
-  },
   {
     menuItem: "Загрузка",
     render: () => (
