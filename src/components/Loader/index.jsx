@@ -20,9 +20,30 @@ class Loader extends Component {
         const file = files[0];
         const reader = new FileReader();
         reader.onload = function(event) {
-          console.log(event.target.result);
-        };
+          const newState = JSON.parse(JSON.stringify(this.props.state));
+          newState.data.fullText = event.target.result;
+          this.props.changeState(newState);
+        }.bind(this);
         reader.readAsText(file);
+      },
+      false
+    );
+
+    document.getElementById("upload_clipboard").addEventListener(
+      "click",
+      () => {
+        navigator.clipboard
+          .readText()
+          .then(text => {
+            const newState = JSON.parse(JSON.stringify(this.props.state));
+            newState.data.fullText = text;
+            this.props.changeState(newState);
+          })
+          .catch(err => {
+            const newState = JSON.parse(JSON.stringify(this.props.state));
+            newState.data.fullText = "";
+            this.props.changeState(newState);
+          });
       },
       false
     );
@@ -39,17 +60,22 @@ class Loader extends Component {
                 <Header icon>
                   <Icon name="paste" />С буфера обмена
                 </Header>
-                <Button secondary> Вставить </Button>
+                <Button id="upload_clipboard" secondary>
+                  {" "}
+                  Вставить{" "}
+                </Button>
               </Grid.Column>
               <Grid.Column>
                 <Header icon>
                   <Icon name="file" />С файла
                 </Header>
-                <Input
-                  id="upload_textfile"
-                  type="file"
-                  encType="multipart/form-data"
-                />
+                <div>
+                  <Input
+                    id="upload_textfile"
+                    type="file"
+                    encType="multipart/form-data"
+                  />
+                </div>
               </Grid.Column>
             </Grid.Row>
           </Grid>
@@ -59,6 +85,7 @@ class Loader extends Component {
             id="source-text"
             control={TextArea}
             label="Исходные данные"
+            value={this.props.state.data.fullText}
           />
         </Form>
       </section>

@@ -10,71 +10,95 @@ import Relevance from "./Relevance";
 
 import { Tab } from "semantic-ui-react";
 
-const panes = [
-  {
-    menuItem: "Загрузка",
-    render: () => (
-      <Tab.Pane>
-        <Loader />
-      </Tab.Pane>
-    )
-  },
-  {
-    menuItem: "Очистка",
-    render: () => (
-      <Tab.Pane>
-        <Cleaner />
-      </Tab.Pane>
-    )
-  },
-  {
-    menuItem: "Разделение на слова",
-    render: () => (
-      <Tab.Pane>
-        <Spliter />
-      </Tab.Pane>
-    )
-  },
-  {
-    menuItem: "Стемминг",
-    render: () => (
-      <Tab.Pane>
-        <Stemming />
-      </Tab.Pane>
-    )
-  },
-  {
-    menuItem: "Группировка",
-    render: () => (
-      <Tab.Pane>
-        <Grouping />
-      </Tab.Pane>
-    )
-  },
-  {
-    menuItem: "Весовые коэффициенты",
-    render: () => (
-      <Tab.Pane>
-        <WeightCoefficient />
-      </Tab.Pane>
-    )
-  },
-  {
-    menuItem: "Вычисление релевантности",
-    render: () => (
-      <Tab.Pane>
-        <Relevance />
-      </Tab.Pane>
-    )
-  }
-];
-
 class Main extends Component {
+  constructor(params) {
+    super(params);
+
+    this.panes = [
+      {
+        menuItem: "Загрузка",
+        render: () => (
+          <Tab.Pane>
+            <Loader
+              state={this.props.state}
+              changeState={this.props.changeState}
+            />
+          </Tab.Pane>
+        )
+      },
+      {
+        menuItem: "Очистка",
+        render: () => (
+          <Tab.Pane>
+            <Cleaner
+              state={this.props.state}
+              changeState={this.props.changeState}
+            />
+          </Tab.Pane>
+        )
+      },
+      {
+        menuItem: "Разделение на слова",
+        render: () => (
+          <Tab.Pane>
+            <Spliter
+              state={this.props.state}
+              changeState={this.props.changeState}
+            />
+          </Tab.Pane>
+        )
+      },
+      {
+        menuItem: "Стемминг",
+        render: () => (
+          <Tab.Pane>
+            <Stemming
+              state={this.props.state}
+              changeState={this.props.changeState}
+            />
+          </Tab.Pane>
+        )
+      },
+      {
+        menuItem: "Группировка",
+        render: () => (
+          <Tab.Pane>
+            <Grouping
+              state={this.props.state}
+              changeState={this.props.changeState}
+            />
+          </Tab.Pane>
+        )
+      },
+      {
+        menuItem: "Весовые коэффициенты",
+        render: () => (
+          <Tab.Pane>
+            <WeightCoefficient
+              state={this.props.state}
+              changeState={this.props.changeState}
+            />
+          </Tab.Pane>
+        )
+      },
+      {
+        menuItem: "Вычисление релевантности",
+        render: () => (
+          <Tab.Pane>
+            <Relevance
+              state={this.props.state}
+              changeState={this.props.changeState}
+            />
+          </Tab.Pane>
+        )
+      }
+    ];
+  }
   render() {
     return (
       <Tab
         menu={{ fluid: true, vertical: true, tabular: true, pointing: true }}
-        panes={panes}
+        panes={this.panes}
       />
     );
   }
