@@ -12,6 +12,55 @@ import {
 } from "semantic-ui-react";
 
 class Loader extends Component {
+  render() {
+    return (
+      <section>
+        <Segment placeholder>
+          <Grid columns={2} stackable textAlign="center">
+            <Divider vertical>Or</Divider>
+            <Grid.Row verticalAlign="middle">
+              <Grid.Column>
+                <Header icon>
+                  <Icon name="paste" />С буфера обмена
+                </Header>
+                <Button id="upload_clipboard" secondary>
+                  {" "}
+                  Вставить{" "}
+                </Button>
+              </Grid.Column>
+              <Grid.Column>
+                <Header icon>
+                  <Icon name="file" />С файла
+                </Header>
+                <div>
+                  <Input
+                    id="upload_textfile"
+                    type="file"
+                    encType="multipart/form-data"
+                  />
+                </div>
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </Segment>
+        <Form>
+          <Form.Field
+            id="fullText"
+            control={TextArea}
+            label="Исходные данные"
+            value={this.props.state.data.fullText}
+            onChange={(_, event) => {
+              const newState = JSON.parse(JSON.stringify(this.props.state));
+              newState.data.fullText = event.value;
+              this.props.changeState(newState);
+            }}
+            autoHeight
+          />
+        </Form>
+      </section>
+    );
+  }
+
   componentDidMount() {
     document.getElementById("upload_textfile").addEventListener(
       "change",
@@ -46,49 +95,6 @@ class Loader extends Component {
           });
       },
       false
-    );
-  }
-
-  render() {
-    return (
-      <section>
-        <Segment placeholder>
-          <Grid columns={2} stackable textAlign="center">
-            <Divider vertical>Or</Divider>
-            <Grid.Row verticalAlign="middle">
-              <Grid.Column>
-                <Header icon>
-                  <Icon name="paste" />С буфера обмена
-                </Header>
-                <Button id="upload_clipboard" secondary>
-                  {" "}
-                  Вставить{" "}
-                </Button>
-              </Grid.Column>
-              <Grid.Column>
-                <Header icon>
-                  <Icon name="file" />С файла
-                </Header>
-                <div>
-                  <Input
-                    id="upload_textfile"
-                    type="file"
-                    encType="multipart/form-data"
-                  />
-                </div>
-              </Grid.Column>
-            </Grid.Row>
-          </Grid>
-        </Segment>
-        <Form>
-          <Form.Field
-            id="source-text"
-            control={TextArea}
-            label="Исходные данные"
-            value={this.props.state.data.fullText}
-          />
-        </Form>
-      </section>
     );
   }
 }

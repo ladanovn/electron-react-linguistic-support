@@ -10,30 +10,21 @@ class App extends Component {
     this.state = {
       data: {
         fullText: "",
-        cleanedText: "",
+        stopSymbols: "0123456789.,<>?!-:;{}[]/'()=&|",
+        clearedText: "",
         words: [],
         stemmedWords: [],
         groupedWords: [],
         weightCoef: [
-          {
-            width: 1,
-            words: []
-          },
-          {
-            width: 2,
-            words: []
-          },
-          {
-            width: 3,
-            words: []
-          }
+          { width: 1, words: [] },
+          { width: 2, words: [] },
+          { width: 3, words: [] }
         ]
       }
     };
   }
 
   changeState(newState) {
-    console.log(newState);
     this.setState(newState);
   }
 
