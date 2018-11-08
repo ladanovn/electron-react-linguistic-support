@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 
-class Porter {
-  constructor(words) {
-    this.words = words;
-  }
-}
+// class Porter {
+//   constructor(words) {
+//     this.words = words;
+//   }
+// }
 
 class Stemming extends Component {
   render() {
