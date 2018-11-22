@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Form, TextArea, Input } from "semantic-ui-react";
 
 function clearText(text, stopSymbols) {
-  console.log(text);
   return text
     .split("")
     .map(symbol => {
