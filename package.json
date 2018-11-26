@@ -4,8 +4,10 @@
   "private": true,
   "dependencies": {
     "@types/electron": "^1.6.10",
+    "@types/gh-pages": "^2.0.0",
     "@types/react-redux": "^6.0.9",
     "electron": "^3.0.6",
+    "gh-pages": "^2.0.1",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "react-redux": "^5.1.0",
@@ -14,6 +16,8 @@
     "semantic-ui-react": "^0.83.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b master -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -27,5 +31,6 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "homepage": "https://github.com/ladanovn/electron-react-linguistic-support"
 }
