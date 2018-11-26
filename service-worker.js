@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/ladanovn/electron-react-linguistic-support/precache-manifest.47ca6490e1bd30df5c3d41d528ca01cf.js"
+  "/ladanovn/electron-react-linguistic-support/precache-manifest.42884c7e4358d4759aae3ed2387552ab.js"
 );
 
 workbox.clientsClaim();

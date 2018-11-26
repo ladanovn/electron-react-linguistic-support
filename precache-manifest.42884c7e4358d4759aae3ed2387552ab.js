@@ -20,12 +20,12 @@ self.__precacheManifest = [
     "url": "/ladanovn/electron-react-linguistic-support/static/js/runtime~main.01569b21.js"
   },
   {
-    "revision": "ef60a4f6c25ef7f39f2d25a748dbecfe",
-    "url": "/ladanovn/electron-react-linguistic-support/static/media/outline-icons.ef60a4f6.woff"
-  },
-  {
     "revision": "cd6c777f1945164224dee082abaea03a",
     "url": "/ladanovn/electron-react-linguistic-support/static/media/outline-icons.cd6c777f.woff2"
+  },
+  {
+    "revision": "ef60a4f6c25ef7f39f2d25a748dbecfe",
+    "url": "/ladanovn/electron-react-linguistic-support/static/media/outline-icons.ef60a4f6.woff"
   },
   {
     "revision": "9c74e172f87984c48ddf5c8108cabe67",
