@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/ladanovn/electron-react-linguistic-support/precache-manifest.42884c7e4358d4759aae3ed2387552ab.js"
+  "/react-linguistic-support/precache-manifest.e9ba4dfc10a7d98da909985c3c4db20c.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/ladanovn/electron-react-linguistic-support/index.html", {
+workbox.routing.registerNavigationRoute("/react-linguistic-support/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
