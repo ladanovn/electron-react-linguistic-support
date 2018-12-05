@@ -1,3 +1,20 @@
+Array.prototype.customeSort = function (match) {
+    return QuickSort(this, match);
+};
+
+function QuickSort(A, match) {
+    if (A.length === 0) return [];
+    const a = [];
+    const b = [];
+    const p = A[0];
+
+    for (var i = 1; i < A.length; i++) {
+        if (match(A[i], p)) a[a.length] = A[i];
+        else b[b.length] = A[i];
+    }
+    return QuickSort(a, match).concat(p, QuickSort(b, match));
+}
+
 export const dropdownOptions = [{
         text: "По умолчанию",
         value: 'defaultSort'
@@ -35,21 +52,21 @@ export function defaultSort(words) {
 
 export function ascendingFromBeginningSort(words) {
 
-    return words.sort((a, b) => {
+    return words.customeSort((a, b) => {
         return a.localeCompare(b);
     })
 }
 
 export function descendingFromBeginningSort(words) {
 
-    return words.sort((a, b) => {
+    return words.customeSort((a, b) => {
         return b.localeCompare(a);
     })
 }
 
 export function asceningFromEndingSort(words) {
 
-    return words.sort((a, b) => {
+    return words.customeSort((a, b) => {
         const rev_a = a
             .split("")
             .reverse()
@@ -66,7 +83,7 @@ export function asceningFromEndingSort(words) {
 
 export function descendingFromEndingSort(words) {
 
-    return words.sort((a, b) => {
+    return words.customeSort((a, b) => {
         const rev_a = a
             .split("")
             .reverse()

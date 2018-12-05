@@ -9,7 +9,7 @@ export class Porter {
     stem(word) {
 
         const wordParts = this.findWordParts(word);
-        const stemmedWord = this.stemByWordParts(wordParts).word;
+        const stemmedWord = this.stemByWordParts(wordParts);
 
         return stemmedWord
     }
@@ -150,8 +150,9 @@ export class Porter {
 
         let reversed_word = this.reverse_word(word);
         const first_volwe = Math.max(...PORTER_CONST.VOWELS.map((vowel) => {
-            if (reversed_word.indexOf(vowel) !== -1) return reversed_word.indexOf(vowel);
-            return 0
+            if ((reversed_word.indexOf(vowel) !== -1) &&
+                (PORTER_CONST.CONSONANTS.includes(reversed_word[reversed_word.indexOf(vowel) + 1]))) return reversed_word.indexOf(vowel) - 1;
+            return 0;
         }));
 
         const RV = reversed_word.substr(0, first_volwe);
