@@ -9,7 +9,7 @@ export class Porter {
     stem(word) {
 
         const wordParts = this.findWordParts(word);
-        const stemmedWord = this.stemByWordParts(wordParts);
+        const stemmedWord = this.stemByWordParts(wordParts).word;
 
         return stemmedWord
     }

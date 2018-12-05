@@ -9,7 +9,7 @@ class Stemming extends Component {
     const porter = new Porter();
 
     const newState = JSON.parse(JSON.stringify(this.props.state));
-    newState.data.stemmedWords = porter.stemAll(this.props.state.data.words);
+    newState.data.stemmedWords = porter.stemAll(this.props.state.data.words).filter(word => word !== "");
     this.props.changeState(newState);
   }
 

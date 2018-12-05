@@ -10,7 +10,7 @@ class App extends Component {
     this.state = {
       data: {
         fullText: "",
-        stopSymbols: "0123456789.,<>?!-:;{}[]/'()=&|",
+        stopSymbols: "0123456789.,<>?!-:;{}[]/'()=&|^",
         clearedText: "",
         words: [],
         stemmedWords: [],
