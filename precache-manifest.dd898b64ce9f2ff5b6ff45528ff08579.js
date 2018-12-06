@@ -1,19 +1,19 @@
 self.__precacheManifest = [
   {
-    "revision": "b6334816320d7b1d48a6",
+    "revision": "faff92145777a3cbaf8e7367b4807987",
+    "url": "/react-linguistic-support/static/media/icons.faff9214.woff"
+  },
+  {
+    "revision": "c87ee7a4fdd271ce5d73",
     "url": "/react-linguistic-support/static/css/main.b35b730a.chunk.css"
   },
   {
-    "revision": "b6334816320d7b1d48a6",
-    "url": "/react-linguistic-support/static/js/main.b6334816.chunk.js"
+    "revision": "a1a749e89f578a49306ec2b055c073da",
+    "url": "/react-linguistic-support/static/media/brand-icons.a1a749e8.svg"
   },
   {
-    "revision": "a2d138b6ec70ea1393ed",
-    "url": "/react-linguistic-support/static/css/1.cfe943b7.chunk.css"
-  },
-  {
-    "revision": "a2d138b6ec70ea1393ed",
-    "url": "/react-linguistic-support/static/js/1.a2d138b6.chunk.js"
+    "revision": "73e4f7f0fce1ed3aac7f",
+    "url": "/react-linguistic-support/static/js/1.73e4f7f0.chunk.js"
   },
   {
     "revision": "10eaeae955e6ea6efcac",
@@ -32,20 +32,20 @@ self.__precacheManifest = [
     "url": "/react-linguistic-support/static/media/flags.9c74e172.png"
   },
   {
-    "revision": "701ae6abd4719e9c2ada3535a497b341",
-    "url": "/react-linguistic-support/static/media/outline-icons.701ae6ab.eot"
-  },
-  {
     "revision": "ad97afd3337e8cda302d10ff5a4026b8",
     "url": "/react-linguistic-support/static/media/outline-icons.ad97afd3.ttf"
+  },
+  {
+    "revision": "701ae6abd4719e9c2ada3535a497b341",
+    "url": "/react-linguistic-support/static/media/outline-icons.701ae6ab.eot"
   },
   {
     "revision": "0ab54153eeeca0ce03978cc463b257f7",
     "url": "/react-linguistic-support/static/media/icons.0ab54153.woff2"
   },
   {
-    "revision": "faff92145777a3cbaf8e7367b4807987",
-    "url": "/react-linguistic-support/static/media/icons.faff9214.woff"
+    "revision": "c87ee7a4fdd271ce5d73",
+    "url": "/react-linguistic-support/static/js/main.c87ee7a4.chunk.js"
   },
   {
     "revision": "e8c322de9658cbeb8a774b6624167c2c",
@@ -56,20 +56,20 @@ self.__precacheManifest = [
     "url": "/react-linguistic-support/static/media/brand-icons.a046592b.woff"
   },
   {
-    "revision": "8e3c7f5520f5ae906c6cf6d7f3ddcd19",
-    "url": "/react-linguistic-support/static/media/icons.8e3c7f55.eot"
+    "revision": "c5ebe0b32dc1b5cc449a76c4204d13bb",
+    "url": "/react-linguistic-support/static/media/brand-icons.c5ebe0b3.ttf"
   },
   {
-    "revision": "b87b9ba532ace76ae9f6edfe9f72ded2",
-    "url": "/react-linguistic-support/static/media/icons.b87b9ba5.ttf"
+    "revision": "8e3c7f5520f5ae906c6cf6d7f3ddcd19",
+    "url": "/react-linguistic-support/static/media/icons.8e3c7f55.eot"
   },
   {
     "revision": "13db00b7a34fee4d819ab7f9838cc428",
     "url": "/react-linguistic-support/static/media/brand-icons.13db00b7.eot"
   },
   {
-    "revision": "c5ebe0b32dc1b5cc449a76c4204d13bb",
-    "url": "/react-linguistic-support/static/media/brand-icons.c5ebe0b3.ttf"
+    "revision": "b87b9ba532ace76ae9f6edfe9f72ded2",
+    "url": "/react-linguistic-support/static/media/icons.b87b9ba5.ttf"
   },
   {
     "revision": "82f60bd0b94a1ed68b1e6e309ce2e8c3",
@@ -80,11 +80,11 @@ self.__precacheManifest = [
     "url": "/react-linguistic-support/static/media/icons.962a1bf3.svg"
   },
   {
-    "revision": "a1a749e89f578a49306ec2b055c073da",
-    "url": "/react-linguistic-support/static/media/brand-icons.a1a749e8.svg"
+    "revision": "73e4f7f0fce1ed3aac7f",
+    "url": "/react-linguistic-support/static/css/1.cfe943b7.chunk.css"
   },
   {
-    "revision": "ec0d524a1238b6611925c69e958161ea",
+    "revision": "fe4001ee34db23c07ccdec1fd0cf94a6",
     "url": "/react-linguistic-support/index.html"
   }
 ];
