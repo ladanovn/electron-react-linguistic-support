@@ -8,7 +8,7 @@ class Spliter extends Component {
     const newState = JSON.parse(JSON.stringify(this.props.state));
     newState.data.words = this.props.state.data.clearedText
       .split(" ")
-      .filter(word => word !== "");
+      .filter(word => word !== "" && word.length >= 3);
     this.props.changeState(newState);
   }
 

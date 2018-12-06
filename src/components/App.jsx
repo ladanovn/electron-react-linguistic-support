@@ -15,7 +15,13 @@ class App extends Component {
         words: [],
         stemmedWords: [],
         groupedWords: [],
-        weightCoef: []
+        weightCoef: [],
+        relevance: {
+          text: "",
+          stemmedWords: [],
+          relevance: "",
+          matchingWords: []
+        }
       }
     };
   }
