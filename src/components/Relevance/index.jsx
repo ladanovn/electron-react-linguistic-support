@@ -19,9 +19,11 @@ function calcRelevance(_, e) {
   const stemmedWords = porter
     .stemAll(words)
     .filter(word => word !== "" && word.length >= 3);
+
   const matchingWords = [];
   let R = 0;
-  let sumR = 0;
+  let maxR = 0;
+
   stemmedWords.forEach(word => {
     let k = 0;
     this.props.state.data.weightCoef.forEach(coefGroup => {
@@ -31,20 +33,22 @@ function calcRelevance(_, e) {
         }
       });
     });
+
     if (k !== 0) {
       const groupedWord = this.props.state.data.groupedWords.find(gWord => {
         return gWord.value === word;
       });
+
       matchingWords.push(groupedWord.value);
       R += (1 / k) * groupedWord.count;
-      sumR += groupedWord.count;
+      maxR += groupedWord.count;
     }
   });
 
   newState.data.relevance = {
     text,
     stemmedWords,
-    relevance: R / sumR,
+    relevance: R / maxR,
     matchingWords
   };
 
