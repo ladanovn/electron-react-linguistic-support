@@ -1,7 +1,7 @@
 {
   "main.css": "/react-linguistic-support/static/css/main.b35b730a.chunk.css",
-  "main.js": "/react-linguistic-support/static/js/main.4417e510.chunk.js",
-  "main.js.map": "/react-linguistic-support/static/js/main.4417e510.chunk.js.map",
+  "main.js": "/react-linguistic-support/static/js/main.91e5e1c6.chunk.js",
+  "main.js.map": "/react-linguistic-support/static/js/main.91e5e1c6.chunk.js.map",
   "static/css/1.cfe943b7.chunk.css": "/react-linguistic-support/static/css/1.cfe943b7.chunk.css",
   "static/js/1.8cc0007d.chunk.js": "/react-linguistic-support/static/js/1.8cc0007d.chunk.js",
   "static/js/1.8cc0007d.chunk.js.map": "/react-linguistic-support/static/js/1.8cc0007d.chunk.js.map",
@@ -11,6 +11,6 @@
   "static/css/main.b35b730a.chunk.css.map": "/react-linguistic-support/static/css/main.b35b730a.chunk.css.map",
   "static/css/1.cfe943b7.chunk.css.map": "/react-linguistic-support/static/css/1.cfe943b7.chunk.css.map",
   "index.html": "/react-linguistic-support/index.html",
-  "precache-manifest.fe448f280b7f4312e134f30235e8fdf6.js": "/react-linguistic-support/precache-manifest.fe448f280b7f4312e134f30235e8fdf6.js",
+  "precache-manifest.8c84b420b4be77d293e11b5afeb9550e.js": "/react-linguistic-support/precache-manifest.8c84b420b4be77d293e11b5afeb9550e.js",
   "service-worker.js": "/react-linguistic-support/service-worker.js"
 }
