@@ -1,5 +1,15 @@
 import * as PORTER_CONST from "./const";
 
+const sortByLength = (a, b) => a.length >= b.length ? -1 : 1;
+const perfective_gerund = PORTER_CONST.PERFECTIVE_GERUND.sort(sortByLength);
+const reflexive = PORTER_CONST.REFLEXIVE.sort(sortByLength);
+const adjective = PORTER_CONST.ADJECTIVE.sort(sortByLength);
+const participle = PORTER_CONST.PARTICIPLE.sort(sortByLength);
+const verb = PORTER_CONST.VERB.sort(sortByLength);
+const noun = PORTER_CONST.NOUN.sort(sortByLength);
+const derivational = PORTER_CONST.DERIVATIONAL.sort(sortByLength);
+const superlative = PORTER_CONST.SUPERLATIVE.sort(sortByLength);
+
 export class Porter {
 
     stemAll(words) {
@@ -8,145 +18,58 @@ export class Porter {
 
     stem(word) {
 
-
         const wordParts = this.findWordParts(word);
-        // const stemmedWord = this.stemByWordParts(wordParts).word;
-        console.log(wordParts)
-        return ''
+        console.log(JSON.parse(JSON.stringify(wordParts)))
+        const stemmedWord = this.stemByWordParts(wordParts).word;
+        console.log(this.stemByWordParts(wordParts))
+        return stemmedWord;
     }
 
     stemByWordParts(data) {
 
-        let reversed_word = data.reversed_word;
-        let RV = data.RV;
-        let R2 = data.R2;
-        const sortByLength = (a, b) => a.length >= b.length ? -1 : 1;
-        const perfective_gerund = PORTER_CONST.PERFECTIVE_GERUND.sort(sortByLength);
-        const reflexive = PORTER_CONST.REFLEXIVE.sort(sortByLength);
-        const adjective = PORTER_CONST.ADJECTIVE.sort(sortByLength);
-        const participle = PORTER_CONST.PARTICIPLE.sort(sortByLength);
-        const verb = PORTER_CONST.VERB.sort(sortByLength);
-        const noun = PORTER_CONST.NOUN.sort(sortByLength);
-        const derivational = PORTER_CONST.DERIVATIONAL.sort(sortByLength);
-        const superlative = PORTER_CONST.SUPERLATIVE.sort(sortByLength);
-
         let haveReflexive = false;
         let haveAdjective = false;
-        // console.log(this.reverse_word(RV))
 
-        for (let i = 0; i <= perfective_gerund.length - 1; i++) {
-            let ending = this.reverse_word(perfective_gerund[i])
+        this.removeEnding(data, perfective_gerund);
 
-            if (RV.slice(0, ending.length) === ending) {
-                RV = RV.replace(ending, "")
-                reversed_word = reversed_word.replace(ending, "");
-                return Object.assign({}, data, {
-                    reversed_word,
-                    word: this.reverse_word(reversed_word)
-                });
-            }
+        haveReflexive = this.removeEnding(data, reflexive);
+        haveAdjective = this.removeEnding(data, adjective);
+
+        this.removeEnding(data, participle);
+
+        if (haveAdjective)
+            return data;
+
+        this.removeEnding(data, verb);
+
+        if (!haveReflexive)
+            this.removeEnding(data, noun);
+
+        // Step 2
+
+        if (data.RV.slice(data.RV.length - 1) === 'и') {
+            data.RV = data.RV.slice(0, data.RV.length - 1);
+            data.word = data.word.slice(0, data.word.length - 1);
         }
 
-        for (let i = 0; i <= reflexive.length - 1; i++) {
-            let ending = this.reverse_word(reflexive[i]);
+        // Step 3
 
-            if (RV.slice(0, ending.length) === ending) {
-                RV = RV.replace(ending, "")
-                reversed_word = reversed_word.replace(ending, "");
-                haveReflexive = true;
-                break;
-            }
-        }
-
-        for (let i = 0; i <= adjective.length - 1; i++) {
-            let ending = this.reverse_word(adjective[i]);
-
-            if (RV.slice(0, ending.length) === ending) {
-                RV = RV.replace(ending, "")
-                reversed_word = reversed_word.replace(ending, "");
-                haveAdjective = true;
-                break;
-            }
-        }
-
-        for (let i = 0; i <= participle.length - 1; i++) {
-            let ending = this.reverse_word(participle[i]);
-
-            if (RV.slice(0, ending.length) === ending) {
-                RV = RV.replace(ending, "")
-                reversed_word = reversed_word.replace(ending, "");
-                break;
-            }
-        }
-
-        if (haveAdjective) return Object.assign({}, data, {
-            RV,
-            reversed_word,
-            word: this.reverse_word(reversed_word)
-        });
-
-        for (let i = 0; i <= verb.length - 1; i++) {
-            let ending = this.reverse_word(verb[i]);
-
-            if (RV.slice(0, ending.length) === ending) {
-                RV = RV.replace(ending, "")
-                reversed_word = reversed_word.replace(ending, "");
-                break;
-            }
-        }
-
-        if (!haveReflexive) {
-            for (let i = 0; i <= noun.length - 1; i++) {
-                let ending = this.reverse_word(noun[i])
-
-                if (reversed_word.slice(0, ending.length) === ending) {
-                    RV = RV.replace(ending, "")
-                    reversed_word = reversed_word.replace(ending, "");
-                    break;
-                }
-            }
-        }
-
-        if (reversed_word[0] === 'и') {
-            reversed_word = reversed_word.slice(1, reversed_word.length - 1)
-        }
-
-        for (let i = 0; i <= derivational.length - 1; i++) {
-            let ending = this.reverse_word(derivational[i])
-
-            if (R2.slice(0, ending.length) === ending) {
-                reversed_word = reversed_word.replace(ending, "");
-                break;
-            }
-        }
-
-        if (R2) {
+        if (data.R2) {
             for (let i = 0; i <= derivational.length - 1; i++) {
-                let ending = this.reverse_word(derivational[i])
+                const ending = derivational[i];
 
-                if (R2.slice(0, ending.length) === ending) {
-                    reversed_word = reversed_word.replace(ending, "");
+                if (data.R2.slice(data.R2.length - ending.length) === ending) {
+                    data.RV = data.RV.slice(0, data.RV.length - ending.length);
+                    data.word = data.word.slice(0, data.word.length - ending.length);
                     break;
                 }
             }
         }
 
-        const extendedSL = superlative.concat(['н', 'ь'])
-        for (let i = 0; i <= extendedSL.length - 1; i++) {
-            let ending = this.reverse_word(extendedSL[i])
+        // Step 4
+        this.removeEnding(data, superlative.concat(['н', 'ь']))
 
-            if (R2.slice(0, ending.length) === ending) {
-                reversed_word = reversed_word.replace(ending, "");
-                break;
-            }
-        }
-
-        return Object.assign({}, data, {
-            RV,
-            reversed_word,
-            word: this.reverse_word(reversed_word)
-        });
-
+        return data;
     }
 
     findWordParts(word) {
@@ -181,5 +104,20 @@ export class Porter {
             R1,
             R2
         }
+    }
+
+    removeEnding(data, endings) {
+        for (let i = 0; i <= endings.length - 1; i++) {
+            const ending = endings[i];
+
+            if (data.RV.slice(data.RV.length - ending.length) === ending) {
+                data.RV = data.RV.slice(0, data.RV.length - ending.length);
+                data.word = data.word.slice(0, data.word.length - ending.length);
+
+                return true;
+            }
+        }
+
+        return false;
     }
 }
