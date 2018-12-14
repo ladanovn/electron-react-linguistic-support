@@ -6,12 +6,7 @@ function calcRelevance(_, e) {
   const porter = new Porter();
   const newState = JSON.parse(JSON.stringify(this.props.state));
   const text = e.value
-    .split("")
-    .map(symbol => {
-      if (this.props.state.data.stopSymbols.includes(symbol)) return " ";
-      else return symbol;
-    })
-    .join("")
+    .replace(/[^A-ZА-Я]/gi, " ")
     .replace(/\s+/g, " ")
     .toLowerCase();
 
