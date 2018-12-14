@@ -4,16 +4,16 @@ self.__precacheManifest = [
     "url": "/react-linguistic-support/static/media/icons.faff9214.woff"
   },
   {
-    "revision": "c69696b6d65744dc7564",
-    "url": "/react-linguistic-support/static/css/main.b35b730a.chunk.css"
+    "revision": "c31019378c75e69c66da",
+    "url": "/react-linguistic-support/static/css/main.90b89a56.chunk.css"
   },
   {
     "revision": "a1a749e89f578a49306ec2b055c073da",
     "url": "/react-linguistic-support/static/media/brand-icons.a1a749e8.svg"
   },
   {
-    "revision": "d0f350fbf5c121b4de42",
-    "url": "/react-linguistic-support/static/js/1.d0f350fb.chunk.js"
+    "revision": "e626fb6654b0a35e4410",
+    "url": "/react-linguistic-support/static/js/1.e626fb66.chunk.js"
   },
   {
     "revision": "10eaeae955e6ea6efcac",
@@ -44,8 +44,8 @@ self.__precacheManifest = [
     "url": "/react-linguistic-support/static/media/icons.0ab54153.woff2"
   },
   {
-    "revision": "c69696b6d65744dc7564",
-    "url": "/react-linguistic-support/static/js/main.c69696b6.chunk.js"
+    "revision": "c31019378c75e69c66da",
+    "url": "/react-linguistic-support/static/js/main.c3101937.chunk.js"
   },
   {
     "revision": "e8c322de9658cbeb8a774b6624167c2c",
@@ -60,31 +60,31 @@ self.__precacheManifest = [
     "url": "/react-linguistic-support/static/media/icons.8e3c7f55.eot"
   },
   {
-    "revision": "b87b9ba532ace76ae9f6edfe9f72ded2",
-    "url": "/react-linguistic-support/static/media/icons.b87b9ba5.ttf"
-  },
-  {
     "revision": "13db00b7a34fee4d819ab7f9838cc428",
     "url": "/react-linguistic-support/static/media/brand-icons.13db00b7.eot"
   },
   {
-    "revision": "c5ebe0b32dc1b5cc449a76c4204d13bb",
-    "url": "/react-linguistic-support/static/media/brand-icons.c5ebe0b3.ttf"
+    "revision": "b87b9ba532ace76ae9f6edfe9f72ded2",
+    "url": "/react-linguistic-support/static/media/icons.b87b9ba5.ttf"
   },
   {
     "revision": "82f60bd0b94a1ed68b1e6e309ce2e8c3",
     "url": "/react-linguistic-support/static/media/outline-icons.82f60bd0.svg"
   },
   {
+    "revision": "c5ebe0b32dc1b5cc449a76c4204d13bb",
+    "url": "/react-linguistic-support/static/media/brand-icons.c5ebe0b3.ttf"
+  },
+  {
     "revision": "962a1bf31c081691065fe333d9fa8105",
     "url": "/react-linguistic-support/static/media/icons.962a1bf3.svg"
   },
   {
-    "revision": "d0f350fbf5c121b4de42",
+    "revision": "e626fb6654b0a35e4410",
     "url": "/react-linguistic-support/static/css/1.cfe943b7.chunk.css"
   },
   {
-    "revision": "0f8296bd7df11d53a112bf76b3b125dc",
+    "revision": "e171c31530497007491d378b104ee468",
     "url": "/react-linguistic-support/index.html"
   }
 ];
