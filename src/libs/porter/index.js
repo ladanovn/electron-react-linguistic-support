@@ -8,10 +8,11 @@ export class Porter {
 
     stem(word) {
 
-        const wordParts = this.findWordParts(word);
-        const stemmedWord = this.stemByWordParts(wordParts).word;
 
-        return stemmedWord
+        const wordParts = this.findWordParts(word);
+        // const stemmedWord = this.stemByWordParts(wordParts).word;
+        console.log(wordParts)
+        return ''
     }
 
     stemByWordParts(data) {
@@ -31,11 +32,13 @@ export class Porter {
 
         let haveReflexive = false;
         let haveAdjective = false;
+        // console.log(this.reverse_word(RV))
 
         for (let i = 0; i <= perfective_gerund.length - 1; i++) {
             let ending = this.reverse_word(perfective_gerund[i])
 
-            if (reversed_word.slice(0, ending.length) === ending) {
+            if (RV.slice(0, ending.length) === ending) {
+                RV = RV.replace(ending, "")
                 reversed_word = reversed_word.replace(ending, "");
                 return Object.assign({}, data, {
                     reversed_word,
@@ -148,40 +151,35 @@ export class Porter {
 
     findWordParts(word) {
 
-        let reversed_word = this.reverse_word(word);
-        const first_volwe = Math.max(...PORTER_CONST.VOWELS.map((vowel) => {
-            if ((reversed_word.indexOf(vowel) !== -1) &&
-                (PORTER_CONST.CONSONANTS.includes(reversed_word[reversed_word.indexOf(vowel) + 1]))) return reversed_word.indexOf(vowel) - 1;
-            return 0;
+        const RVInd = Math.min(...word.split('').map((symbol, index) => {
+            if ((PORTER_CONST.VOWELS.includes(symbol)) && (PORTER_CONST.CONSONANTS.includes(word[index - 1])))
+                return index
+            else return word.length
         }));
 
-        const RV = reversed_word.substr(0, first_volwe);
-        const R1Index = Math.min(...PORTER_CONST.CONSONANTS.map((consonant) => {
-            if (RV.indexOf(consonant) !== -1) return reversed_word.indexOf(consonant);
-            return first_volwe;
+        const RV = word.substr(RVInd + 1, word.length);
+
+        const R1Ind = Math.min(...RV.split('').map((symbol, index) => {
+            if ((PORTER_CONST.CONSONANTS.includes(symbol)) && (PORTER_CONST.VOWELS.includes(RV[index - 1])))
+                return index
+            else return RV.length
         }));
 
-        const R1 = reversed_word.substr(R1Index, first_volwe - 1);
-        const R2Index = Math.max(...PORTER_CONST.VOWELS.map((vowel) => {
-            if ((RV.indexOf(vowel) !== -1) &&
-                (PORTER_CONST.CONSONANTS.includes(RV[RV.indexOf(vowel) + 1]))) return reversed_word.indexOf(vowel) + 1;
-            return R1Index;
+        const R1 = RV.substr(R1Ind + 1, RV.length);
+
+        const R2Ind = Math.min(...R1.split('').map((symbol, index) => {
+            if ((PORTER_CONST.CONSONANTS.includes(symbol)) && (PORTER_CONST.VOWELS.includes(R1[index - 1])))
+                return index
+            else return R1.length
         }));
 
-        const R2 = reversed_word.substr(R1Index, R2Index);
+        const R2 = R1.substr(R2Ind + 1, R1.length);
 
         return {
             word,
-            reversed_word,
             RV,
             R1,
             R2
         }
-    }
-
-    reverse_word(word) {
-        return word.split("")
-            .reverse()
-            .join("");
     }
 }
