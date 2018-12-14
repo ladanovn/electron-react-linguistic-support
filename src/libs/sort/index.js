@@ -53,14 +53,14 @@ export function defaultSort(words) {
 export function ascendingFromBeginningSort(words) {
 
     return words.customeSort((a, b) => {
-        return a.localeCompare(b);
+        return a.localeCompare(b) < 0 ? true : false;
     })
 }
 
 export function descendingFromBeginningSort(words) {
 
     return words.customeSort((a, b) => {
-        return b.localeCompare(a);
+        return b.localeCompare(a) < 0 ? true : false;
     })
 }
 
@@ -77,7 +77,7 @@ export function asceningFromEndingSort(words) {
             .reverse()
             .join("");
 
-        return rev_a.localeCompare(rev_b);
+        return rev_a.localeCompare(rev_b) < 0 ? true : false;
     })
 }
 
@@ -94,6 +94,6 @@ export function descendingFromEndingSort(words) {
             .reverse()
             .join("");
 
-        return rev_b.localeCompare(rev_a);
+        return rev_b.localeCompare(rev_a) < 0 ? true : false;
     })
 }
