@@ -1,3 +1,8 @@
+.App {
+    width: 960px;
+    margin: 50px auto;
+}
+
 .ui.grid {
     min-height: 100%;
 }

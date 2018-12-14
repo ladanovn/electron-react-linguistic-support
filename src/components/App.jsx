@@ -20,7 +20,8 @@ class App extends Component {
           stemmedWords: [],
           relevance: "",
           matchingWords: []
-        }
+        },
+        ngrams: []
       }
     };
   }

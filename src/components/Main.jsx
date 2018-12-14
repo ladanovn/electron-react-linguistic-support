@@ -7,6 +7,7 @@ import Stemming from "./Stemming";
 import Grouping from "./Grouping";
 import WeightCoefficient from "./WeightCoefficient";
 import Relevance from "./Relevance";
+import NGram from "./NGram";
 
 import { Tab } from "semantic-ui-react";
 
@@ -86,6 +87,17 @@ class Main extends Component {
         render: () => (
           <Tab.Pane>
             <Relevance
+              state={this.props.state}
+              changeState={this.props.changeState}
+            />
+          </Tab.Pane>
+        )
+      },
+      {
+        menuItem: "N-граммы",
+        render: () => (
+          <Tab.Pane>
+            <NGram
               state={this.props.state}
               changeState={this.props.changeState}
             />
