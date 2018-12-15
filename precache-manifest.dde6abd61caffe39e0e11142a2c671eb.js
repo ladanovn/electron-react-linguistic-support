@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/react-linguistic-support/static/media/icons.faff9214.woff"
   },
   {
-    "revision": "c31019378c75e69c66da",
+    "revision": "76bcd5497903a1fd9afd",
     "url": "/react-linguistic-support/static/css/main.90b89a56.chunk.css"
   },
   {
@@ -44,16 +44,16 @@ self.__precacheManifest = [
     "url": "/react-linguistic-support/static/media/icons.0ab54153.woff2"
   },
   {
-    "revision": "c31019378c75e69c66da",
-    "url": "/react-linguistic-support/static/js/main.c3101937.chunk.js"
-  },
-  {
-    "revision": "e8c322de9658cbeb8a774b6624167c2c",
-    "url": "/react-linguistic-support/static/media/brand-icons.e8c322de.woff2"
+    "revision": "76bcd5497903a1fd9afd",
+    "url": "/react-linguistic-support/static/js/main.76bcd549.chunk.js"
   },
   {
     "revision": "a046592bac8f2fd96e994733faf3858c",
     "url": "/react-linguistic-support/static/media/brand-icons.a046592b.woff"
+  },
+  {
+    "revision": "e8c322de9658cbeb8a774b6624167c2c",
+    "url": "/react-linguistic-support/static/media/brand-icons.e8c322de.woff2"
   },
   {
     "revision": "8e3c7f5520f5ae906c6cf6d7f3ddcd19",
@@ -84,7 +84,7 @@ self.__precacheManifest = [
     "url": "/react-linguistic-support/static/css/1.cfe943b7.chunk.css"
   },
   {
-    "revision": "e171c31530497007491d378b104ee468",
+    "revision": "fbdeec1b9adb87398c169fe4b139af49",
     "url": "/react-linguistic-support/index.html"
   }
 ];
