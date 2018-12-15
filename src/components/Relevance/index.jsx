@@ -11,13 +11,17 @@ function calcRelevance(_, e) {
     .toLowerCase();
 
   const words = text.split(" ").filter(word => word !== "");
+  const matchingWords = [];
   const stemmedWords = porter
     .stemAll(words)
     .filter(word => word !== "" && word.length >= 3);
 
-  const matchingWords = [];
   let R = 0;
   let maxR = 0;
+  let avgCoef = 0;
+
+  this.props.state.data.groupedWords.forEach(word => (avgCoef += word.count));
+  avgCoef = avgCoef / this.props.state.data.groupedWords.length;
 
   stemmedWords.forEach(word => {
     let k = 0;
@@ -37,6 +41,8 @@ function calcRelevance(_, e) {
       matchingWords.push(groupedWord.value);
       R += (1 / k) * groupedWord.count;
       maxR += groupedWord.count;
+    } else {
+      maxR += avgCoef;
     }
   });
 
